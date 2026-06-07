@@ -1,7 +1,7 @@
 ==============================================================
   MAVEN WEB APP - CI/CD PIPELINE CASE STUDY DELIVERABLES
 ==============================================================
-Repo: https://github.com/Msocial123/maven-web-application.git
+Repo: https://github.com/jeevan0024/maven-web-application.git
 Stack: Java + Maven + SonarQube + Jenkins + Ansible + Tomcat + Docker
 
 ==============================================================
@@ -12,7 +12,7 @@ Below is the text-based representation of the CI/CD Architecture Flow:
 Developer (Pushes Code)
    │
    ▼
-GitHub Repository (Msocial123/maven-web-application.git)
+GitHub Repository (jeevan0024/maven-web-application.git)
    │
    ▼ (Webhook / Poll SCM)
 Jenkins CI/CD Server (Orchestrator)
@@ -55,7 +55,7 @@ The pipeline is designed declaratively in the `Jenkinsfile` and contains:
   - Connects to GitHub and checks out the master branch.
   - Keeps build history and discards older logs (keeps last 5).
   - Code:
-    git branch: 'master', url: 'https://github.com/Msocial123/maven-web-application.git'
+    git branch: 'main', url: 'https://github.com/jeevan0024/maven-web-application.git'
 
 - Stage 2: Static Code Analysis (SonarQube Analysis & Quality Gate)
   - Submits analysis: `mvn clean sonar:sonar`
