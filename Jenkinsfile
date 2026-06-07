@@ -26,8 +26,8 @@ pipeline {
 
         stage('SonarQube Analysis') {
             steps {
-                withSonarQubeEnv('SonarQube') {
-                    sh 'mvn clean sonar:sonar'
+                withCredentials([string(credentialsId: 'sonar-token', variable: 'SONAR_TOKEN')]) {
+                    sh "mvn clean sonar:sonar -Dsonar.host.url=http://13.206.123.82:9000 -Dsonar.token=${SONAR_TOKEN}"
                 }
             }
         }
