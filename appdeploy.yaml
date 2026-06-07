@@ -3,25 +3,20 @@
   become: true
   tasks:
     - name: stop tomcat
-      systemd:
-        name: tomcat.service
-        state: stopped
+      shell: /usr/local/apache-tomcat/bin/shutdown.sh
+      ignore_errors: yes
     - name: delete old application package
       file:
-        path: /usr/local/apache-tomcat-7.0.76/webapps/maven-web-application.war
+        path: /usr/local/apache-tomcat/webapps/maven-web-application.war
         state: absent
     - name: copy application package
       copy:
         src: target/maven-web-application.war
-        dest: /usr/local/apache-tomcat-7.0.76/webapps/maven-web-application.war
+        dest: /usr/local/apache-tomcat/webapps/maven-web-application.war
         owner: tomcat
         group: tomcat
     - name: start tomcat
-      systemd:
-        name: tomcat.service
-        state: started
-        daemon_reload: yes
-        enabled: yes
+      shell: /usr/local/apache-tomcat/bin/startup.sh
     - name: Pause for 1 Minute and continue with play
       pause:
         minutes: 1
