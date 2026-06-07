@@ -55,7 +55,7 @@ sudo chown -R sonar:sonar /opt/sonarqube
 sudo -u sonar /opt/sonarqube/bin/linux-x86-64/sonar.sh start
 
 Access SonarQube: http://<SONAR-IP>:9000
-Default login: admin / admin → change to Mur@li2025
+Default login: admin / admin → change to Jeevan0024
 
 
 
