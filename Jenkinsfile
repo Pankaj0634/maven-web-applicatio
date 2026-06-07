@@ -46,11 +46,13 @@ pipeline {
             }
         }
 
+        /*
         stage('Upload To Nexus') {
             steps {
                 sh 'mvn clean deploy'
             }
         }
+        */
 
         stage('Deploy via Ansible') {
             steps {
